@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Northern Rockies Karate-do</title>
+    <!-- No-JS visitors skip straight to the home page. -->
+    <noscript><meta http-equiv="refresh" content="0;url=index.html"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        .loader-screen {
+            position: fixed; inset: 0;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            gap: clamp(14px, 3.2vh, 40px);
+            background: radial-gradient(circle at 50% 44%, #17140f 0%, #0c0b0a 58%, #060606 100%);
+            font-family: "Cormorant Garamond", Georgia, serif;
+            -webkit-font-smoothing: antialiased;
+            overflow: hidden;
+        }
+
+        .scene {
+            position: relative;
+            aspect-ratio: 1024 / 1536;
+            height: min(72vh, 124vw);
+            flex: none;
+        }
+
+        .glow {
+            position: absolute; left: 49%; top: 55%;
+            width: 64%; aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            background: radial-gradient(circle, #C8102E 0%, rgba(200,16,46,0.45) 38%, rgba(200,16,46,0) 70%);
+            filter: blur(10px);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            animation: glowPulse 4.6s ease-in-out infinite;
+        }
+
+        .layers {
+            position: absolute; inset: 0;
+            transform-origin: 50% 56%;
+            animation: breathe 6s ease-in-out 2.3s infinite;
+        }
+
+        .layers img {
+            position: absolute; inset: 0;
+            width: 100%; height: 100%;
+            object-fit: contain;
+        }
+
+        .plate { animation: fadeIn 0.6s ease-out both; filter: drop-shadow(0 0 22px rgba(200,16,46,.28)); }
+        .crane { animation: craneIn 1.55s cubic-bezier(0.16, 1, 0.3, 1) 0.30s both; }
+        .bear  { animation: bearIn 1.55s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both; filter: drop-shadow(0 6px 18px rgba(0,0,0,.45)); }
+
+        .nameblock {
+            display: flex; flex-direction: column; align-items: center; gap: 10px;
+            animation: nameIn 0.85s ease-out 2.0s both;
+        }
+
+        .name-jp {
+            font-family: "Noto Serif JP", "Cormorant Garamond", serif;
+            font-size: clamp(13px, 1.7vh, 17px);
+            letter-spacing: 0.42em;
+            color: #C8102E;
+            padding-left: 0.42em;
+        }
+
+        .name-en {
+            margin: 0;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-weight: 600;
+            font-size: clamp(22px, 3.4vh, 40px);
+            letter-spacing: 0.01em;
+            color: #F7F4EE;
+            text-align: center;
+            line-height: 1.1;
+        }
+
+        .name-en a { color: inherit; text-decoration: none; cursor: pointer; }
+
+        .loader-track {
+            position: relative;
+            width: 150px; height: 2px;
+            margin-top: 6px;
+            background: rgba(200,16,46,0.22);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .loader-track .sweep {
+            position: absolute; top: 0; left: 0;
+            height: 100%; width: 42px;
+            background: #C8102E;
+            border-radius: 2px;
+            animation: sweep 1.5s linear infinite;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes craneIn {
+            from { opacity: 0; transform: translateX(-142%) rotate(-3deg); }
+            to   { opacity: 1; transform: translateX(0) rotate(0); }
+        }
+        @keyframes bearIn {
+            from { opacity: 0; transform: translateX(142%) scale(1.06); }
+            to   { opacity: 1; transform: translateX(0) scale(1); }
+        }
+        @keyframes nameIn {
+            from { opacity: 0; transform: translateY(16px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes glowPulse {
+            0%, 100% { opacity: 0.30; transform: translate(-50%, -50%) scale(0.92); }
+            50%      { opacity: 0.72; transform: translate(-50%, -50%) scale(1.06); }
+        }
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); }
+            50%      { transform: scale(1.014); }
+        }
+        @keyframes sweep {
+            from { transform: translateX(-130%); }
+            to   { transform: translateX(330%); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .glow, .layers, .plate, .crane, .bear, .nameblock, .sweep { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader-screen" data-screen-label="Loading screen">
+        <div class="scene">
+            <div class="glow"></div>
+            <div class="layers">
+                <img class="plate" src="images/loading-platePng.png" alt="" />
+                <img class="crane" src="images/loading-cranePng.png" alt="" />
+                <img class="bear" src="images/loading-bearPng.png" alt="" />
+            </div>
+        </div>
+        <div class="nameblock">
+            <div class="name-jp">千唐流　空手道</div>
+            <h1 class="name-en"><a href="index.html">Northern Rockies Karate-do</a></h1>
+            <div class="loader-track"><div class="sweep"></div></div>
+        </div>
+    </div>
+
+    <script>
+        // Auto-forward to the home page after 10 seconds. Visitors can click the
+        // title to skip ahead at any time.
+        setTimeout(function () { window.location.href = 'index.html'; }, 10000);
+    </script>
+</body>
+</html>
