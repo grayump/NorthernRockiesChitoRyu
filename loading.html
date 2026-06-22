@@ -143,15 +143,24 @@
         </div>
         <div class="nameblock">
             <div class="name-jp">千唐流　空手道</div>
-            <h1 class="name-en"><a href="index.html">Northern Rockies Karate-do</a></h1>
+            <h1 class="name-en"><a href="index.html?from=loading">Northern Rockies Karate-do</a></h1>
             <div class="loader-track"><div class="sweep"></div></div>
         </div>
     </div>
 
     <script>
-        // Auto-forward to the home page after 10 seconds. Visitors can click the
-        // title to skip ahead at any time.
-        setTimeout(function () { window.location.href = 'index.html'; }, 10000);
+        // Remember that the intro has played so index.html's first-visit gate
+        // doesn't send us back here (which would loop). The ?from=loading param
+        // is a fallback for when localStorage is blocked.
+        (function () {
+            try { localStorage.setItem('nrkd_intro_seen', '1'); } catch (e) { /* storage blocked */ }
+
+            function go() { window.location.href = 'index.html?from=loading'; }
+
+            // Auto-forward to the home page after 10 seconds. Visitors can click
+            // the title to skip ahead at any time.
+            setTimeout(go, 10000);
+        }());
     </script>
 </body>
 </html>

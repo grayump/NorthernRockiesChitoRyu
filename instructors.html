@@ -1,130 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="normal" data-bs-theme="light">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Instructors - Chito-Ryu Karate - PGChitoRyu</title>
-    <script type="importmap"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/site.css" />
+    <meta name="description" content="Instructors of the Northern Rockies PG Chito-Ryu Karate Club." />
+    <title>Instructors - Northern Rockies Chito-Ryu Karate</title>
+    <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/lib/bootstrap-icons/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="assets/css/site.css" />
+    <link rel="stylesheet" href="assets/css/themes.css" />
+    <link rel="stylesheet" href="assets/css/public.css" />
+    <script>
+        (function () {
+            var t = localStorage.getItem('theme') || 'normal';
+            document.documentElement.setAttribute('data-theme', t);
+            document.documentElement.setAttribute('data-bs-theme', t === 'dark' ? 'dark' : 'light');
+        }());
+    </script>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark border-bottom shadow-sm mb-4">
             <div class="container">
-                <a class="navbar-brand" href="index.html">PG Chito-Ryu</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/images/crest-normal.gif" class="crest crest-normal" alt="" />
+                    <img src="assets/images/crest-light.png" class="crest crest-light" alt="" />
+                    <img src="assets/images/crest-gray-silver.png" class="crest crest-dark" alt="" />
+                    Northern Rockies Chito-Ryu
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nrkdNav"
+                        aria-controls="nrkdNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="index.html">Home</a>
-                    </li>                   
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="classes.html">Classes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="instructors.html">Instructors</a>
-                    </li>                 
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="faq.html">FAQ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="contact.html">Contact</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-white" href="#" id="membersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Members</a>
-                        <ul class="dropdown-menu" aria-labelledby="membersDropdown">
-                            <li><a class="dropdown-item" href="showa.html">Showa</a></li>
-                        </ul>
-                    </li>
-                </ul>
+                <div id="nrkdNav" class="collapse navbar-collapse justify-content-between">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="classes.html">Classes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>                        
+                    </ul>
+                    <div class="d-flex align-items-center gap-1">
+                        <a href="members/index.html" class="btn btn-sm btn-outline-light me-2"><i class="bi bi-lock-fill"></i> Members</a>
+                        <button class="btn btn-sm btn-outline-light theme-btn" data-theme="normal" onclick="setTheme('normal')" title="Branded theme"><i class="bi bi-shield-fill"></i></button>
+                        <button class="btn btn-sm btn-outline-light theme-btn" data-theme="light" onclick="setTheme('light')" title="Light theme"><i class="bi bi-sun-fill"></i></button>
+                        <button class="btn btn-sm btn-outline-light theme-btn" data-theme="dark" onclick="setTheme('dark')" title="Dark theme"><i class="bi bi-moon-fill"></i></button>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            <div class="container">
-                <h1 class="text-center mb-4">Our Instructors</h1>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <h3>Sensei K</h3>
-                            </div>
-                            <div class="card-body">
-                                <p>Sensei - Focus on beginner and intermediate training, with emphasis on proper form and safety.</p>
-                                <p>Experienced in teaching children and adults of all ages.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <h3>Senpai</h3> Senior students
-                            </div>
-                            <div class="card-body">
-                                <p>Dedicated Brown Belts. Focus on beginner and intermediate training, with emphasis on proper form and safety.</p>
-                                <p>Experienced in teaching students of all ages.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <h3>Sensei F</h3>
-                            </div>
-                            <div class="card-body">
-                                <p>Sensei - Focus all levels of training.</p>
-                                <p>Experienced in teaching children and adults of all ages.</p>                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <h3></h3>
-                            </div>
-                            <div class="card-body">
-                                <p>
-                                    Our club is part of Northern Rockies Karate-Do. This provides us the
-                                    opportunity to train frequently with Sensei F. both on-line and in person.
-                                    <br />
-                                    We are also affiliated with other clubs within <a href="https://bcchitokai.com/"> BC Chito Kai</a>
-                                    giving us access to additional training opportunities throughout the year.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <h2>Credentials</h2>
-                        <p>
-                            Instructors are NCCP certified through the <a href="https://coach.ca/new-coaching/about-nccp">Coaching Association of Canada.</a>
-                            We prioritize safety, respect, and continuous learning in our teaching approach.
-                        </p>
+
+    <main class="container flex-grow-1 pb-4">
+        <h1 class="text-center mb-4">Our Instructors</h1>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header">Sensei K</div>
+                    <div class="card-body">
+                        <p>Sensei — focus on beginner and intermediate training, with emphasis on proper form and safety.</p>
+                        <p>Experienced in teaching children and adults of all ages.</p>
                     </div>
                 </div>
             </div>
-        </main>
-    </div>
-    
-    <footer class="border-top footer">
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header">Senpai — Senior Students</div>
+                    <div class="card-body">
+                        <p>Dedicated brown belts. Focus on beginner and intermediate training, with emphasis on proper
+                            form and safety.</p>
+                        <p>Experienced in teaching students of all ages.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4 mt-1">
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header">Sensei F</div>
+                    <div class="card-body">
+                        <p>Sensei — focus on all levels of training.</p>
+                        <p>Experienced in teaching children and adults of all ages.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header">Affiliations</div>
+                    <div class="card-body">
+                        <p>Our club is part of Northern Rockies Karate-Do, which gives us the opportunity to train
+                            frequently with Sensei F, both online and in person. We are also affiliated with other clubs
+                            within <a href="https://bcchitokai.com/">BC Chito Kai</a>, giving us access to additional
+                            training opportunities throughout the year.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12">
+                <h2>Credentials</h2>
+                <p>Instructors are NCCP certified through the
+                    <a href="https://coach.ca/new-coaching/about-nccp">Coaching Association of Canada</a>.
+                    We prioritize safety, respect, and continuous learning in our teaching approach.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-top text-muted py-3 mt-auto">
         <div class="container">
-            &copy; 2025 - PGChitoRyu
+            &copy; 2026 Northern Rockies PG Chito-Ryu Karate Club
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="js/site.js"></script>
-
+    <script src="assets/lib/jquery/dist/jquery.min.js"></script>
+    <script src="assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/site.js"></script>
 </body>
 </html>
