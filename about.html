@@ -1,93 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="normal" data-bs-theme="light">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Chito-Ryu Karate - PGChitoRyu</title>
-    <script type="importmap"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/site.css" />
+    <meta name="description" content="About Chito-Ryu Karate — history and philosophy of the Northern Rockies PG Chito-Ryu Karate Club." />
+    <title>About - Northern Rockies Chito-Ryu Karate</title>
+    <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/lib/bootstrap-icons/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="assets/css/site.css" />
+    <link rel="stylesheet" href="assets/css/themes.css" />
+    <link rel="stylesheet" href="assets/css/public.css" />
+    <script>
+        (function () {
+            var t = localStorage.getItem('theme') || 'normal';
+            document.documentElement.setAttribute('data-theme', t);
+            document.documentElement.setAttribute('data-bs-theme', t === 'dark' ? 'dark' : 'light');
+        }());
+    </script>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark border-bottom shadow-sm mb-4">
             <div class="container">
-                <a class="navbar-brand" href="index.html">PG Chito-Ryu</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/images/crest-normal.gif" class="crest crest-normal" alt="" />
+                    <img src="assets/images/crest-light.png" class="crest crest-light" alt="" />
+                    <img src="assets/images/crest-gray-silver.png" class="crest crest-dark" alt="" />
+                    Northern Rockies Chito-Ryu
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nrkdNav"
+                        aria-controls="nrkdNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="classes.html">Classes</a>
-                        </li>
-     <!--
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="instructors.html">Instructors</a>
-                            </li>
-    -->
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="faq.html">FAQ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="contact.html">Contact</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-white" href="#" id="membersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Members</a>
-                            <ul class="dropdown-menu" aria-labelledby="membersDropdown">
-                                <li><a class="dropdown-item" href="showa.html">Showa</a></li>
-                            </ul>
-                        </li>
+                <div id="nrkdNav" class="collapse navbar-collapse justify-content-between">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="classes.html">Classes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>                        
                     </ul>
+                    <div class="d-flex align-items-center gap-1">
+                        <a href="members/index.html" class="btn btn-sm btn-outline-light me-2"><i class="bi bi-lock-fill"></i> Members</a>
+                        <button class="btn btn-sm btn-outline-light theme-btn" data-theme="normal" onclick="setTheme('normal')" title="Branded theme"><i class="bi bi-shield-fill"></i></button>
+                        <button class="btn btn-sm btn-outline-light theme-btn" data-theme="light" onclick="setTheme('light')" title="Light theme"><i class="bi bi-sun-fill"></i></button>
+                        <button class="btn btn-sm btn-outline-light theme-btn" data-theme="dark" onclick="setTheme('dark')" title="Dark theme"><i class="bi bi-moon-fill"></i></button>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            <div class="container">
-    <h1 class="text-center mb-4">About Chito-Ryu Karate</h1>
-    <div class="row">
-        <div class="col-md-6">
-            <h2>History</h2>
-            <p>Chito-Ryu Karate was founded by Dr. Tsuyoshi Chitose. O-Sensei studied various martial arts, 
-                developing Chito-Ryu by combining strengths and aspects of both Shuri-Te and Naha no Te with medical knowledge.</p>
-            <p>The name "Chito-Ryu" means "Thousand Year Style," reflecting the longevity, history, and depth of the art.</p>
-        </div>
-        <div class="col-md-6">
-            <img src="images/crestred.gif" alt="Chito-Ryu Crest" class="img-fluid" style="max-width: 200px;" />
-        </div>
-    </div>
-    <div class="row mt-4">
-        <div class="col-12">
-            <h2>Philosophy</h2>
-            <p>Chito-Ryu Karate focuses on the development of character, self-discipline, and respect. Practitioners learn not only self-defense techniques but also the importance of harmony between mind, body, and spirit.</p>
-            <p>Key principles include:</p>
-            <ul>
-                <li>Respect for others and oneself</li>
-                <li>Perseverance and dedication</li>
-                <li>Balance and harmony</li>
-                <li>Continuous improvement</li>
-            </ul>
-        </div>
-    </div>
-</div>
-        </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
+    <main class="container flex-grow-1 pb-4">
+        <h1 class="text-center mb-4">About Chito-Ryu Karate</h1>
+        <div class="row g-4 align-items-center">
+            <div class="col-md-7">
+                <h2>History</h2>
+                <p>Chito-Ryu Karate was founded by Dr. Tsuyoshi Chitose. O-Sensei studied various martial arts,
+                    developing Chito-Ryu by combining the strengths of both Shuri-Te and Naha-Te with his medical knowledge.</p>
+                <p>The name "Chito-Ryu" means "Thousand Year Style," reflecting the longevity, history, and depth of the art.</p>
+            </div>
+            <div class="col-md-5 text-center">
+                <img src="images/crestred.gif" alt="Chito-Ryu Crest" class="crest crest-hero crest-normal crest-light" />
+                <img src="images/crest-gray-silver.png" alt="Chito-Ryu Crest" class="crest crest-hero crest-dark" />
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12">
+                <h2>Philosophy</h2>
+                <p>Chito-Ryu Karate focuses on the development of character, self-discipline, and respect. Practitioners
+                    learn not only self-defense techniques but also the importance of harmony between mind, body, and spirit.</p>
+                <p>Key principles include:</p>
+                <ul>
+                    <li>Respect for others and oneself</li>
+                    <li>Perseverance and dedication</li>
+                    <li>Balance and harmony</li>
+                    <li>Continuous improvement</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-top text-muted py-3 mt-auto">
         <div class="container">
-            &copy; 2025 - PGChitoRyu
+            &copy; 2026 Northern Rockies PG Chito-Ryu Karate Club
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="js/site.js"></script>
-
+    <script src="assets/lib/jquery/dist/jquery.min.js"></script>
+    <script src="assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/site.js"></script>
 </body>
 </html>

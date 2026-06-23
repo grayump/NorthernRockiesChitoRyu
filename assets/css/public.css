@@ -1,0 +1,41 @@
+/* ============================================================
+   Public marketing site — small additions on top of the shared
+   NrkdChitoryu.Web theme (themes.css + site.css).
+   ============================================================ */
+
+/* Hero block on the landing page */
+.hero {
+    text-align: center;
+    padding: 2rem 0 1rem;
+}
+
+.hero .crest-hero {
+    height: 200px;
+    width: auto;
+}
+
+/* Branded heading accent in the normal (club) theme only */
+[data-theme="normal"] .text-brand {
+    color: #7B1113;
+}
+
+/* Reusable benefit checklist */
+.checklist {
+    list-style: none;
+    padding-left: 0;
+}
+.checklist li {
+    padding: 0.15rem 0;
+}
+.checklist li i {
+    color: #7B1113;
+    margin-right: 0.5rem;
+}
+[data-bs-theme="dark"] .checklist li i {
+    color: #C41E3A;
+}
+
+/* Members entry card on the landing page */
+.members-cta .card {
+    border-color: #7B1113;
+}

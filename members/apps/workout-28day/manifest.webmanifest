@@ -1,0 +1,16 @@
+{
+  "name": "28-Day Chitō-Ryū Karate",
+  "short_name": "Karate 28",
+  "description": "A 28-day Chitō-Ryū karate program — kihon, kata, kicks, kumite & conditioning — with selectable skill and fitness plans and offline progress tracking.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0D0D0D",
+  "theme_color": "#0D0D0D",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
