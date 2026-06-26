@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#F7F4EE" />
+  <title>Training Journal · Northern Rockies Karate-do</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <link rel="stylesheet" href="css/theme.css" />
+</head>
+<body>
+  <div id="root"></div>
+  <noscript>
+    <div style="max-width:480px;margin:0 auto;padding:48px 24px;color:#F7F4EE;font-family:system-ui,sans-serif;text-align:center;">
+      <p>The Training Journal needs JavaScript to run.</p>
+      <p><a href="../../index.html" style="color:#C8102E;">&laquo; Back to the members area</a></p>
+    </div>
+  </noscript>
+
+  <script src="js/vendor/react.production.min.js"></script>
+  <script src="js/vendor/react-dom.production.min.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Offline support is best-effort; never block the app if registration fails.
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('sw.js').catch(function () {});
+      });
+    }
+  </script>
+</body>
+</html>

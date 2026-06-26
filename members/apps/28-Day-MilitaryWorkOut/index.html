@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>28-Day Military Conditioning</title>
+  <meta name="theme-color" content="#0D0D0D" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <script>
+    // Apply the saved theme before first paint to avoid a flash.
+    (function () {
+      var t = localStorage.getItem('military-workout/theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    }());
+  </script>
+  <link rel="stylesheet" href="css/theme.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="theme-toggle">
+        <button class="theme-btn" data-set-theme="dark" title="Dark theme" aria-label="Dark theme">🌙</button>
+        <button class="theme-btn" data-set-theme="light" title="Light theme" aria-label="Light theme">☀</button>
+      </div>
+      <div class="kicker">28-Day Program · Intermediate · Pull-up Bar + Dumbbells</div>
+      <h1 class="title">MILITARY CONDITIONING</h1>
+      <div class="week-themes">
+        <span style="color:#7B1113">Week 1: Foundation</span>
+        <span style="color:#9B2D20">Week 2: Build</span>
+        <span style="color:#7A3B2E">Week 3: Intensity</span>
+        <span style="color:#6E6E9E">Week 4: Peak</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="app"></main>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('sw.js').catch(function () { /* offline support is best-effort */ });
+      });
+    }
+  </script>
+</body>
+</html>

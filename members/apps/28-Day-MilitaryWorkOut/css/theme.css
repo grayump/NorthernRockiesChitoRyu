@@ -1,0 +1,257 @@
+/* ============================================================
+   28-Day Military Conditioning — theme
+   Ported from the original JSX inline styles. Field-manual
+   aesthetic, monospace. Two selectable themes via the
+   [data-theme] attribute on <html> (default dark). Per-type
+   accent colours are passed in via the --c custom property on
+   elements (set by app.js) and work on both themes.
+   ============================================================ */
+
+/* ---- Dark theme (default) ---- */
+:root,
+html[data-theme="dark"] {
+  --bg: #0D0D0D;
+  --ink: #ECE6DC;
+  --accent: #7B1113;        /* deep red */
+  --accent-2: #6E6E9E;      /* indigo secondary */
+  --panel: #131110;
+  --panel-2: #1C1A18;
+  --border: #3A332E;
+  --border-soft: #262220;
+  --muted: #A39A8E;
+  --muted-2: #74695E;
+  --muted-3: #55504A;
+  --cool: #4F8FC0;
+  --on-accent: #fff;
+}
+
+/* ---- Light theme ---- */
+html[data-theme="light"] {
+  --bg: #F4F2EC;
+  --ink: #1E1A17;
+  --accent: #7B1113;
+  --accent-2: #56568A;
+  --panel: #FFFFFF;
+  --panel-2: #EAE6DC;
+  --border: #CDC6B8;
+  --border-soft: #DED9CD;
+  --muted: #5A534A;
+  --muted-2: #847C70;
+  --muted-3: #A39C90;
+  --cool: #2C5F8A;
+  --on-accent: #fff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 17px;
+  line-height: 1.5;
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+/* ---------- Header ---------- */
+.header {
+  background: var(--bg);
+  border-bottom: 2px solid var(--accent);
+  padding: 22px 24px;
+}
+.header-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+.kicker {
+  font-size: 13px;
+  letter-spacing: 0.28em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.title {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.05em;
+}
+.week-themes { margin-top: 10px; display: flex; gap: 16px; flex-wrap: wrap; font-size: 13px; }
+
+/* ---------- Theme toggle ---------- */
+.theme-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  gap: 6px;
+}
+.theme-btn {
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1;
+  padding: 7px 9px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.theme-btn.active {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ---------- Layout ---------- */
+.container { max-width: 700px; margin: 0 auto; padding: 24px 16px; }
+
+/* ---------- Progress ---------- */
+.progress-section { margin-bottom: 16px; }
+.progress-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 7px;
+}
+.progress-bar { background: var(--panel-2); height: 8px; border-radius: 4px; overflow: hidden; }
+.progress-fill { background: var(--accent); height: 100%; border-radius: 4px; transition: width 0.4s ease; }
+
+/* ---------- Projection ---------- */
+.projection {
+  margin: 14px 0 26px;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.projection .proj-label { color: var(--accent); letter-spacing: 0.18em; }
+.projection .proj-date { color: var(--ink); font-weight: 700; }
+.projection.done { color: var(--accent); font-weight: 700; letter-spacing: 0.14em; }
+
+/* ---------- Legend ---------- */
+.legend { display: flex; gap: 14px; margin-bottom: 22px; flex-wrap: wrap; }
+.legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
+.legend-dot { width: 12px; height: 12px; border-radius: 3px; background: var(--c, var(--accent)); }
+
+/* ---------- Calendar ---------- */
+.week-block { margin-bottom: 26px; }
+.week-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; }
+.week-label { font-size: 14px; font-weight: 700; letter-spacing: 0.15em; }
+.week-theme-sm { font-size: 12px; color: var(--muted-2); letter-spacing: 0.1em; }
+
+.day-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 7px; }
+.day-btn {
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 13px 4px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.day-btn .day-num { font-size: 13px; color: var(--muted-2); }
+.day-btn .day-type { font-size: 9px; color: var(--c, var(--accent)); letter-spacing: 0.04em; text-align: center; }
+.day-btn .day-check { font-size: 13px; color: var(--on-accent); }
+.day-btn.done { background: var(--c, var(--accent)); border-color: var(--c, var(--accent)); }
+.day-btn.done .day-num,
+.day-btn.done .day-type { color: var(--on-accent); }
+
+/* ---------- Field note ---------- */
+.field-note {
+  margin-top: 10px;
+  padding: 16px 18px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.field-note-label { font-size: 12px; color: var(--accent); letter-spacing: 0.2em; margin-bottom: 8px; }
+.field-note-text { font-size: 15px; color: var(--muted); line-height: 1.6; }
+
+/* ---------- Reset ---------- */
+.reset-row { margin-top: 22px; text-align: center; }
+.reset-link {
+  background: none;
+  border: none;
+  color: var(--muted-2);
+  font-family: inherit;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ---------- Day view ---------- */
+.back-btn {
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  margin-bottom: 22px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+}
+.day-header { margin-bottom: 22px; }
+.day-eyebrow { font-size: 12px; color: var(--muted-2); letter-spacing: 0.18em; margin-bottom: 6px; }
+.day-title { margin: 0; font-size: 26px; letter-spacing: 0.08em; color: var(--c, var(--accent)); }
+.day-meta { margin-top: 8px; font-size: 13px; color: var(--muted-2); }
+
+.panel {
+  padding: 14px 16px;
+  background: var(--panel);
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+.panel-label { font-size: 12px; letter-spacing: 0.2em; margin-bottom: 8px; color: var(--accent); }
+.panel-label.cool { color: var(--cool); }
+.panel-text { font-size: 14px; color: var(--muted); line-height: 1.8; }
+
+.section-label { font-size: 12px; color: var(--muted); letter-spacing: 0.2em; margin-bottom: 12px; }
+.exercise-list { display: flex; flex-direction: column; gap: 9px; margin-bottom: 18px; }
+.exercise-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: var(--panel);
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+}
+.exercise-row.first { border-color: var(--c-soft, var(--border-soft)); }
+.exercise-left { display: flex; align-items: center; gap: 12px; }
+.exercise-num { font-size: 12px; color: var(--muted-3); min-width: 20px; }
+.exercise-name { font-size: 15px; color: var(--ink); }
+.exercise-meta { display: flex; gap: 14px; font-size: 13px; }
+.exercise-sets { color: var(--c, var(--accent)); }
+.exercise-reps { color: var(--muted); }
+
+.complete-btn {
+  width: 100%;
+  padding: 16px;
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  color: var(--on-accent);
+  font-size: 15px;
+  font-family: inherit;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+.complete-btn.done {
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  color: var(--muted-2);
+}
